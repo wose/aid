@@ -1,8 +1,8 @@
 use failure::Error;
 
 mod app;
-mod widgets;
 mod event;
+mod widgets;
 
 use crate::app::App;
 

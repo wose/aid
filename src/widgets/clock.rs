@@ -164,34 +164,14 @@ impl<'a> Widget for Clock<'a> {
         self.draw_digit(dt.hour() as usize / 10, left, top, buf);
         self.draw_digit(dt.hour() as usize % 10, left + 7, top, buf);
 
-        buf.set_string(
-            left + 15,
-            top + 1,
-            "  ",
-            Style::default().bg(Color::Green),
-        );
-        buf.set_string(
-            left + 15,
-            top + 3,
-            "  ",
-            Style::default().bg(Color::Green),
-        );
+        buf.set_string(left + 15, top + 1, "  ", Style::default().bg(Color::Green));
+        buf.set_string(left + 15, top + 3, "  ", Style::default().bg(Color::Green));
 
         self.draw_digit(dt.minute() as usize / 10, left + 19, top, buf);
         self.draw_digit(dt.minute() as usize % 10, left + 26, top, buf);
 
-        buf.set_string(
-            left + 34,
-            top + 1,
-            "  ",
-            Style::default().bg(Color::Green),
-        );
-        buf.set_string(
-            left + 34,
-            top + 3,
-            "  ",
-            Style::default().bg(Color::Green),
-        );
+        buf.set_string(left + 34, top + 1, "  ", Style::default().bg(Color::Green));
+        buf.set_string(left + 34, top + 3, "  ", Style::default().bg(Color::Green));
 
         self.draw_digit(dt.second() as usize / 10, left + 38, top, buf);
         self.draw_digit(dt.second() as usize % 10, left + 45, top, buf);

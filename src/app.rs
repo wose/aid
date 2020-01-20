@@ -1,5 +1,5 @@
 use std::io;
-use std::sync::mpsc::{RecvTimeoutError};
+use std::sync::mpsc::RecvTimeoutError;
 
 use termion::input::MouseTerminal;
 use termion::raw::{IntoRawMode, RawTerminal};
@@ -107,6 +107,7 @@ impl App {
 
         match input {
             Key(Char('q')) => self.shutdown = true,
+            Key(Esc) => self.shutdown = true,
             _ => {}
         }
     }

@@ -53,13 +53,9 @@ impl Events {
             })
         };
         let tick_handle = {
-            let tx = tx.clone();
-            thread::spawn(move || {
-                let tx = tx.clone();
-                loop {
-                    tx.send(Event::Tick).unwrap();
-                    thread::sleep(config.tick_rate);
-                }
+            thread::spawn(move || loop {
+                tx.send(Event::Tick).unwrap();
+                thread::sleep(config.tick_rate);
             })
         };
         Events {
@@ -68,4 +64,4 @@ impl Events {
             _tick_handle: tick_handle,
         }
     }
- }
+}
